@@ -54,7 +54,7 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Set up JDK 17
-      uses: action/setup-java@v3
+      uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'adopt'
@@ -67,7 +67,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: ap-northeast-2
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -76,7 +76,8 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: 555680551527.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-example-junghyun
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: 555680551527.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-example-junghyun
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
