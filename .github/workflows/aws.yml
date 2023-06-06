@@ -58,6 +58,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ecs-service-haru # Amazon ECS service name
+          service: ecs-service-haru-1 # Amazon ECS service name
           cluster: ecs-cluster-haru # Amazon ECS cluster name
           wait-for-service-stability: true

@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:555680551527:task-definition/ecs-task-definition-family-haru:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:555680551527:task-definition/ecs-task-definition-family-haru:3",
   "containerDefinitions": [
     {
       "name": "ecr-haru",
@@ -23,9 +23,9 @@
     }
   ],
   "family": "ecs-task-definition-family-haru",
-  "taskRoleArn": "arn:aws:iam::555680551527:role/EcsFullAccessRole_soochan",
+  "taskRoleArn": "arn:aws:iam::555680551527:role/ecs-jejune-iam",
   "executionRoleArn": "arn:aws:iam::555680551527:role/ecsTaskExecutionRole",
-  "revision": 1,
+  "revision": 3,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -55,7 +55,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2023-06-06T12:01:23.040Z",
+  "registeredAt": "2023-06-06T12:22:58.151Z",
   "registeredBy": "arn:aws:iam::555680551527:root",
   "tags": []
 }
