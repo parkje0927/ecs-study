@@ -1,15 +1,15 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:555680551527:task-definition/task-definition-junghyun:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:555680551527:task-definition/ecs-task-definition-family-haru:1",
   "containerDefinitions": [
     {
-      "name": "container-example-junghyun",
-      "image": "555680551527.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-example-junghyun",
+      "name": "ecr-haru",
+      "image": "555680551527.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-haru:latest",
       "cpu": 0,
       "portMappings": [
         {
-          "name": "container-example-junghyun-8085-tcp",
+          "name": "ecr-haru-8085-tcp",
           "containerPort": 8085,
-          "hostPort": 8085,
+          "hostPort": 80,
           "protocol": "tcp",
           "appProtocol": "http"
         }
@@ -22,10 +22,9 @@
       "ulimits": []
     }
   ],
-  "family": "task-definition-junghyun",
-  "taskRoleArn": "arn:aws:iam::555680551527:role/ecs-full-access-junghyun",
-  "executionRoleArn": "arn:aws:iam::555680551527:role/ecs-full-access-junghyun",
-  "networkMode": "awsvpc",
+  "family": "ecs-task-definition-family-haru",
+  "taskRoleArn": "arn:aws:iam::555680551527:role/EcsFullAccessRole_soochan",
+  "executionRoleArn": "arn:aws:iam::555680551527:role/ecsTaskExecutionRole",
   "revision": 1,
   "volumes": [],
   "status": "ACTIVE",
@@ -41,9 +40,6 @@
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "name": "ecs.capability.task-eni"
     }
   ],
   "placementConstraints": [],
@@ -59,7 +55,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2023-05-30T13:20:11.735Z",
+  "registeredAt": "2023-06-06T12:01:23.040Z",
   "registeredBy": "arn:aws:iam::555680551527:root",
   "tags": []
 }
